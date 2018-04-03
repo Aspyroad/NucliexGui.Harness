@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>iOS</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/DefaultFont.spritefont</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/Fonts/Heading1.spritefont</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/Fonts/Heading2.spritefont</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/Fonts/Heading3.spritefont</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/Fonts/Title.spritefont</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/logo-square-128.png</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/SuaveSheet.png</File>
+    <File>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/TitleFont.spritefont</File>
+  </SourceFiles>
+</SourceFileCollection>

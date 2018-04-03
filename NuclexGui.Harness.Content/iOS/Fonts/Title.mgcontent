@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.Content/Fonts/Title.spritefont</SourceFile>
+  <SourceTime>2018-03-14T11:01:54+11:00</SourceTime>
+  <DestFile>/Users/thedood/Projects/NuclexGui.Harness/NuclexGui.Harness.iOS/Content/Fonts/Title.xnb</DestFile>
+  <DestTime>2018-03-26T10:28:06+11:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2017-10-12T11:13:03+11:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2017-10-12T11:13:03+11:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
