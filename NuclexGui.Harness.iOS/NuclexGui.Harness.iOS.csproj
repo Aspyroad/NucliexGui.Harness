@@ -21,7 +21,6 @@
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
     <IOSDebuggerPort>19265</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
@@ -133,21 +132,17 @@
     <None Include="OpenTK.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="TouchListener.cs" />
+    <None Include="DefaultInputCapturer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="EventSubscriber.cs" />
+    <Compile Include="EventSubscriberTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
-      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
-      <Name>MonoGame.Framework.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MonoGame.Extended\Source\MonoGame.Extended\MonoGame.Extended.csproj">
-      <Project>{41724C52-3D50-45BB-81EB-3C8A247EAFD1}</Project>
-      <Name>MonoGame.Extended</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\MonoGame.Extended\Source\MonoGame.Extended.Input\MonoGame.Extended.Input.csproj">
       <Project>{49C87598-994C-49B5-BBB3-7FFC342635D3}</Project>
       <Name>MonoGame.Extended.Input</Name>
@@ -155,6 +150,14 @@
     <ProjectReference Include="..\..\MonoGame.Extended\Source\MonoGame.Extended.NuclexGui\MonoGame.Extended.NuclexGui.csproj">
       <Project>{D8BC4F21-E71D-46CE-B6D3-259F1E0DFABA}</Project>
       <Name>MonoGame.Extended.NuclexGui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MonoGame.Extended\Source\MonoGame.Extended\MonoGame.Extended.csproj">
+      <Project>{41724C52-3D50-45BB-81EB-3C8A247EAFD1}</Project>
+      <Name>MonoGame.Extended</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
+      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
+      <Name>MonoGame.Framework.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
