@@ -19,20 +19,22 @@ namespace NuclexGui_Harness.iOS
         private readonly GraphicsDeviceManager _graphicsDeviceManager;
         private SpriteBatch _spriteBatch;
         private Sprite _sprite;
-        private Camera2D _camera;
+        private OrthographicCamera _camera;
 
         private readonly InputListenerComponent _inputManager;
         private readonly GuiManager _gui;
         private int _rotateDirection = 1;
         private Color _backgroundColor;
+        private Vector2 Position;
+        private float xx; 
 
         public Game1()
         {
             _graphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            //IsMouseVisible = true;
             Window.AllowUserResizing = true;
-            _backgroundColor = Color.Black;
+            _backgroundColor = Color.PaleGreen;
 
             // First, we create an input manager.
             _inputManager = new InputListenerComponent(this);
@@ -48,7 +50,10 @@ namespace NuclexGui_Harness.iOS
 
             // Create a GUI screen and attach it as a default to GuiManager.
             // That screen will also act as a root parent for every other control that we create.
-            _gui.Screen = new GuiScreen(800, 480);
+
+
+
+            _gui.Screen = new GuiScreen(2048, 1536);
             _gui.Screen.Desktop.Bounds = new UniRectangle(new UniScalar(0f, 0), new UniScalar(0f, 0), new UniScalar(1f, 0), new UniScalar(1f, 0));
 
             // Perform second-stage initialization
@@ -89,11 +94,11 @@ namespace NuclexGui_Harness.iOS
         {
             if (_gui.Screen.Desktop.Children.Any(i => i.Name == "window"))
                 return;
-
+            
             var window = new GuiWindowControl
             {
                 Name = "window",
-                Bounds = new UniRectangle(new UniVector(new UniScalar(0.5f, -100), new UniScalar(0.5f, -60)), new UniVector(new UniScalar(200), new UniScalar(160))),
+                Bounds = new UniRectangle(new UniVector(new UniScalar(0.5f, -200), new UniScalar(0.5f, -200)), new UniVector(new UniScalar(400), new UniScalar(400))),
                 Title = "Labels with Styles",
                 EnableDragging = true
             };
@@ -256,13 +261,12 @@ namespace NuclexGui_Harness.iOS
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             var viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, 800, 480);
-            _camera = new Camera2D(viewportAdapter);
+            _camera = new OrthographicCamera(viewportAdapter);
 
             var logoTexture = Content.Load<Texture2D>("logo-square-128");
-            _sprite = new Sprite(logoTexture)
-            {
-                Position = viewportAdapter.Center.ToVector2()
-            };
+            _sprite = new Sprite(logoTexture);
+            Position = viewportAdapter.Center.ToVector2();
+            
         }
 
         protected override void UnloadContent()
@@ -290,7 +294,7 @@ namespace NuclexGui_Harness.iOS
             _inputManager.Update(gameTime);
             _gui.Update(gameTime);
 
-            _sprite.Rotation += deltaTime * _rotateDirection;
+            xx += deltaTime * _rotateDirection;
 
             base.Update(gameTime);
         }
@@ -301,7 +305,7 @@ namespace NuclexGui_Harness.iOS
 
             _spriteBatch.Begin(blendState: BlendState.AlphaBlend, transformMatrix: _camera.GetViewMatrix());
 
-            _spriteBatch.Draw(_sprite);
+            _spriteBatch.Draw(_sprite, Position, xx );
             _spriteBatch.End();
 
             // Draw GUI on top of everything

@@ -21,6 +21,7 @@ namespace NuclexGui_Harness
         {
             
             var game = new NuclexGui_Harness.iOS.Game1();
+
             game.Run();
 
             return true;
